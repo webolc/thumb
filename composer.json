@@ -1,0 +1,16 @@
+{
+    "name": "webolc/thumb",
+    "type": "library",
+    "autoload": {
+        "psr-4": {
+            "Webolc\\Thumb\\": "src/"
+        }
+    },
+    "authors": [
+        {
+            "name": "webolc",
+            "email": "516705893@qq.com"
+        }
+    ],
+    "require": {}
+}
