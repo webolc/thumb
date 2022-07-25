@@ -3,7 +3,7 @@
     "type": "library",
     "autoload": {
         "psr-4": {
-            "Webolc\\Thumb\\": "src/"
+            "webolc\\thumb\\": "src/"
         }
     },
     "authors": [
