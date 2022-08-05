@@ -75,7 +75,7 @@ class Thumb{
      */
     private static function make($filename,$width,$height,$valign='middle'){
         ini_set('gd.jpeg_ignore_warning',true);
-        $filetype=array(1=>'gif',2=>'jpeg',3=>'png');
+        $filetype=array(1=>'gif',2=>'jpeg',3=>'png',18=>'webp');
         # 获取图片信息
         $imginfo=getimagesize($filename);
         $img_w=$imginfo[0];
