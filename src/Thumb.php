@@ -118,6 +118,13 @@ class Thumb{
             }
         }
     
+        //设置透明
+        if(self::$img_type== 'png'){
+            $color=imagecolorallocate($thumb,0,0,0);
+            imagecolortransparent($thumb,$color);
+            imagefill($thumb,0,0,$color);
+        }
+        
         # 合成缩略图
         imagecopyresampled($thumb,$tmp_img,0,0,0,$dst_y,$width,$height, $img_w, $img_h);
     
