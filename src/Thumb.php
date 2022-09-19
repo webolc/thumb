@@ -140,4 +140,49 @@ class Thumb{
         imagedestroy($thumb);
         return $thumb_img;
     }
+    
+    /**
+     * 输出webp图象到浏览器
+     * @param  String  $filename  原图路径
+     * @param  String  $width     预生成缩略图宽度
+     * @param  String  $height    预生成缩略图高度
+     * @param  String  $valign    [middle|top|bottom],默认 居中
+     */
+    public static function showWebp($filename, $width, $height, $valign='middle'){
+        $thumb = self::make($filename, $width, $height, $valign);
+        header('Content-type:image/webp');
+        imagewebp($thumb, null, 100);
+        imagedestroy($thumb);
+    }
+    
+    /**
+     * 保存webp缩略图文件
+     * @param  String  $filename  原图路径
+     * @param  String  $output    缩略图输出路径
+     * @param  String  $width     预生成缩略图宽度
+     * @param  String  $height    预生成缩略图高度
+     * @param  String  $valign    [middle|top|bottom],默认 居中
+     */
+    public static function outWebp($filename, $output, $width, $height, $valign='middle'){
+        $thumb = self::make($filename, $width, $height, $valign);
+        imagewebp($thumb,$output, 100);
+        imagedestroy($thumb);
+    }
+    
+    /**
+     * 输出webp图象到浏览器并保存webp缩略图文件
+     * @param  String  $filename  原图路径
+     * @param  String  $output    缩略图输出路径
+     * @param  String  $width     预生成缩略图宽度
+     * @param  String  $height    预生成缩略图高度
+     * @param  String  $valign    [middle|top|bottom],默认 居中
+     */
+    public static function showOutWebp($filename, $output, $width, $height, $valign='middle'){
+        $thumb = self::make($filename, $width, $height, $valign);
+        $thumb = self::make($filename, $width, $height, $valign);
+        imagewebp($thumb,$output, 100);
+        header('Content-type:image/webp');
+        imagewebp($thumb, null, 100);
+        imagedestroy($thumb);
+    }
 }
